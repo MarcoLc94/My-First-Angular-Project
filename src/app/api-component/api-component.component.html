@@ -1,0 +1,20 @@
+@defer {<div>
+  <ul class="card-container">
+    @for (char of characters; track char.id) {
+    <li class="card">
+      <div class="data-header">
+        <p>{{ char.status }}</p>
+        <p>{{ char.species }}</p>
+      </div>
+      <img src="{{ char.image }}" alt="" />
+      <span>Name: {{ char.name }}</span>
+      <a (click)="redirectDetails(char.id); $event.preventDefault();">Details</a>
+    </li>
+    }
+  </ul>
+</div>} @placeholder (minimum 3000ms) {
+  <div class="loader-container ">
+    <img class="loader" alt="loading..." src="/LOADER.gif" />
+  </div>
+}
+

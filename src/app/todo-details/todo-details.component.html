@@ -1,0 +1,12 @@
+<div *ngIf="todo">
+    <h2>Detalles del Todo</h2>
+    <h3>{{ todo.name }}</h3>
+    <p>Estado: {{ todo.status ? 'Completo' : 'Incompleto' }}</p>
+    
+  </div>
+  @if(!todo){
+      <div>
+          <p>Cargando detalles...</p>
+      </div>
+  }
+  

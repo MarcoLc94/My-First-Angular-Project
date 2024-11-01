@@ -1,0 +1,47 @@
+section {
+  div {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(163, 0, 0);
+
+    h1 {
+      color: rgb(211, 211, 211);
+    }
+    svg:hover {
+      transform: scale(1.3);
+      cursor: pointer;
+    }
+
+    svg:active {
+      transform: scale(1.1);
+      transition: 0.2s;
+    }
+
+    .burguer {
+      position: absolute;
+      top: 70px;
+      right: 0;
+
+      .burguer-list {
+        .burguer-item {
+          color: aliceblue;
+        }
+        .burguer-item:hover {
+          transform: scale(1.1);
+          transition: 0.2s;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .isHide {
+      display: none;
+    }
+  }
+
+  .isShow {
+    display: none;
+    transition: 0.5s;
+  }
+}

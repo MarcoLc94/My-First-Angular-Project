@@ -1,0 +1,32 @@
+.back {
+    margin: 10px;
+    color: red;
+}
+
+.space {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 20px;
+    background-color: green;
+    color: yellow;
+    border-radius: 10px 10px 10px 10px;
+    padding: 10px;
+
+    img{
+        padding: 15px;
+        width: 200px;
+    }
+
+    .card-detailed {
+        display: flex;
+        flex-direction: column;
+    }
+}
+}

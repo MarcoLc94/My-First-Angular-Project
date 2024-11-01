@@ -1,0 +1,54 @@
+
+<div>
+  <section>
+    <form>
+      <div>
+        <span>Name:</span>
+        <input
+          type="text"
+          [(ngModel)]="newTodo"
+          placeholder="new ToDo"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </div>
+      <div>
+        <span>Completed:</span>
+        <input
+          type="checkbox"
+          [(ngModel)]="check"
+          [ngModelOptions]="{ standalone: true }"
+        />
+      </div>
+      <button (click)="addToDoItem()">Add</button>
+    </form>
+    <div class="buttons-form">
+      <button (click)="completeAll()">Complete All</button>
+      <button (click)="deleteAll()">Delete All</button>
+    </div>
+  </section>
+</div>
+<div class="container">
+  <ul>
+    @for(note of arrayNotes; track note.id){
+    <li>
+      <div>
+        <input
+          type="checkbox"
+          [(ngModel)]="note.status"
+          (change)="toggleComplete(note)"
+        />
+        <span
+          [class.status]="note.status"
+          [class]="{ decoration: note.status }"
+          >{{ note.name }}</span
+        >
+      </div>
+      <div class="icons">
+        <a (click)="viewTodoDetails(note.id)">Ver Detalles</a>
+        <button (click)="deleteToDOItem(note.id)">🗑️</button>
+      </div>
+    </li>
+    }
+  </ul>
+</div>
+<router-outlet/>

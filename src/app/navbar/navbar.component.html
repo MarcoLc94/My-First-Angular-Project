@@ -1,0 +1,18 @@
+<section>
+<div [ngClass]="{'isShow': isNavBar}">
+    <h1>My Angular ToDo</h1>
+    <a (click)="isHide()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 252, 252, 1);"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg></a>
+    <div [ngClass]="{'burguer': true, 'isHide': isVisible}">
+        <ul class="burguer-list">
+            <li class="burguer-item" (click)="back(); isSHow(); isHide()">
+                Rick&Morty Api
+            </li>
+        </ul>
+    </div>
+    <!-- <p>{{recibirMensaje}}</p>
+    <label for="childInput">Message:</label>
+    <input type="childInput" [(ngModel)]="message">
+    <button (click)="sendMessage()">Send Message</button> -->
+</div>
+</section>
+

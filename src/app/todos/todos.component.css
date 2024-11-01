@@ -1,0 +1,70 @@
+div {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    
+    
+    section {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+        background-color: rgb(228, 39, 39);
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        color: black;
+        border-radius: 10px 10px 10px 10px;
+        height: 20vh;
+        font-weight: 600;
+       
+        form{
+            display: flex;
+            gap: 30px;
+        }
+
+        button {
+            background-color: white;
+            padding: 10px 20px 10px 20px
+        }
+        
+        button:hover{
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        .buttons-form {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+    }
+}
+
+.container {
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 10px;
+
+        li{
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(255, 233, 39);
+            padding: 30px;
+            width: 40vw;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        .icons {
+            display: flex;
+            gap: 15px;
+        }
+    }
+}
+
+.decoration {
+    text-decoration: line-through;
+}

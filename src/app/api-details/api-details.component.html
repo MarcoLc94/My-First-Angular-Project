@@ -1,0 +1,14 @@
+<button class="back" (click)="back()">Back</button>
+<div class="space">
+  <div class="card-container">
+    <h2>Informacion</h2>
+    <img src="{{ char.image }}" alt="" />
+    <h3>{{ char.name }}</h3>
+    <div class="card-detailed">
+      <span>Gender: {{ char.gender }}</span>
+      <span>Status: {{ char.status }}</span>
+      <span>Origin: {{ char.origin.name }}</span>
+      <span>Location: {{ char.location.name }}</span>
+    </div>
+  </div>
+</div>

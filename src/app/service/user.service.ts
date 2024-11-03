@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { ModelUser } from '../register/register.component';
 import { Router } from '@angular/router';
 import FormSign from '../login/login.component';
-import { Sign } from 'crypto';
-import { Mode } from 'fs';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Injectable({
@@ -11,7 +10,15 @@ import { Mode } from 'fs';
 })
 export class UserService {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private toastr: ToastrService) { }
+
+  greenNotification(message: string) {
+    this.toastr.success(message);
+  }
+
+  redNotification(message: string) {
+    this.toastr.error(message);
+  }
 
   login(obj: FormSign) {
 
@@ -22,6 +29,7 @@ export class UserService {
     }
 
     const data = localStorage.getItem("userData")
+    if(data){
     const parsed = JSON.parse(data!)
     console.log(parsed)
     console.log(tryUser)
@@ -34,10 +42,10 @@ export class UserService {
     console.log(tryUser)
 
     if (found[0].email) {
-      alert(" Email encontrado! ")
+      this.greenNotification("User found! C:")
     } else {
       console.log("primero")
-      alert("User not found :C")
+      this.redNotification("User not found :c")
       return
     }
 
@@ -46,17 +54,20 @@ export class UserService {
     if (found[0].password === tryUser.password) {
       sessionStorage.setItem("userLogged", JSON.stringify(found[0]))
       console.log(found[0])
-      alert("User Verificado con exito!")
+      this.greenNotification("User Verificado con exito!")
       this.router.navigate(["home"])
     } else {
       console.log("segundo")
-      alert("Incorrect password :C")
+      this.redNotification("Incorrect password :C")
       return
     }
 
+  } else {
+    return this.redNotification("No users registered")
   }
 
-  isAdmin(user: ModelUser) {
-    user.admin ? (true) : (false)
-  }
+}
+isAdmin(user: ModelUser) {
+  user.admin ? (true) : (false)
+}
 }

@@ -14,22 +14,23 @@ export class Navbar2Component {
 
   constructor(private router: Router){}
 
-  isVisible = true;
+  isVisible = false;
 
   isHide = () => {
     this.isVisible = !this.isVisible
     console.log(this.isVisible)
   }
 
-  isNavBar = false
-  isSHow = () => {
-    this.isNavBar = !this.isNavBar
-    console.log("el navbar esta:", this.isNavBar)
-  }
-  
-
   back = () => {
     this.router.navigate(["api"])
+  }
+
+ 
+  data = sessionStorage.getItem("userLogged")
+  
+
+  deleteUserSesion = () => {
+    sessionStorage?.removeItem("userLogged")
   }
 
 }

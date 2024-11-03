@@ -3,12 +3,22 @@
     @for (char of characters; track char.id) {
     <li class="card">
       <div class="data-header">
-        <p>{{ char.status }}</p>
-        <p>{{ char.species }}</p>
+        @if(char.status === "Alive") {
+          <p [class]="char.status === 'Alive' ? 'text-green' : 'text-purple'">{{char.status}}</p>
+        } @else {
+          <p [class]="char.status === 'unknown' ? 'text-purple' : 'text-red'">{{char.status}}</p>
+        }
+        @if(char.species === "Human"){
+          <p class="text-orange">{{ char.species }}</p>
+        } @else {
+          <p class="text-brown">{{char.species}}</p>
+        }
       </div>
-      <img src="{{ char.image }}" alt="" />
-      <span>Name: {{ char.name }}</span>
-      <a (click)="redirectDetails(char.id); $event.preventDefault();">Details</a>
+      <img class="img" src="{{ char.image }}" alt="" />
+      <div class="name-details">
+        <span>Name: </span> <p> {{ char.name }}</p>
+      </div>
+      <a class="details" (click)="redirectDetails(char.id); $event.preventDefault();">Details</a>
     </li>
     }
   </ul>
